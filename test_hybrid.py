@@ -16,7 +16,7 @@ with torch.no_grad():
 last = logits[:, -1]
 
 kws = [tok(w).input_ids for w in [" submarine", " treasure", " octopus", " lighthouse"]]
-L = 10
+L = 25
 
 def report(name, ids, dt):
     got = sum(contains(ids[0].tolist(), kw) for kw in kws)
@@ -28,7 +28,7 @@ cold = ColdSpanEngine(lm, iters=150)
 t0 = time.time(); ids, *_ = bolt.generate(past, last, kws, L); report("BOLT", ids, time.time() - t0)
 t0 = time.time(); ids, *_ = cold.optimize(past, last, kws, k=L); report("COLD (full)", ids, time.time() - t0)
 
-for tau in [5.0, 3.0, 2.0]:
+for tau in [5.0, 3.0]:
     hyb = HybridEngine(lm, bolt, cold, AdaptiveRouter(kws, L, tau_horizon=tau))
     t0 = time.time(); ids, esc = hyb.generate(past, last, L=L, kws=kws)
     report(f"HYBRID tau={tau}", ids, time.time() - t0)

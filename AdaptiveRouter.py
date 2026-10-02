@@ -22,7 +22,7 @@ class AdaptiveRouter:
         delta = (self.L - t) / len(rem)                   # horizon deficit from the spec
         if delta > self.tau:
             return None                                   # enough room per keyword
-        kw = rem[0]
-        if self.L - t < len(kw):
-            return None                                   # keyword cannot fit anymore
-        return kw, min(len(kw) + self.extra, self.L - t)
+        k = min(sum(len(kw) for kw in rem) + self.extra, self.L - t)
+        if k < min(len(kw) for kw in rem):
+            return None                                       # nothing fits anymore
+        return rem, k                                         # ALL remaining keywords, one span

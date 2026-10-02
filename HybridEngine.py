@@ -19,12 +19,11 @@ class HybridEngine:
         while t < L:
             action = self.router.check(t, ids)
             if action is not None:
-                kw, k = action
-                # 2) COLD span: prefix cache is frozen inside optimize(); returns committed cache
-                span, cache, cur, hist, _ = self.cold.optimize(cache, cur, [kw], k)
+                rem, k = action
+                span, cache, cur, hist, _ = self.cold.optimize(cache, cur, rem, k)
                 ids += span[0].tolist()
-                ok = contains(span[0].tolist(), kw)                       # did the keyword land in the span?
-                escalations.append((t, k, ok, round(hist[-1][2], 3)))     # (start, span len, placed?, final E_kw)
+                placed = sum(contains(span[0].tolist(), kw) for kw in rem)
+                escalations.append((t, k, f"{placed}/{len(rem)}", round(hist[-1][2], 3)))
                 t += k
             else:
                 # 3) one BOLT step with the tuned bias (no graph needed)
