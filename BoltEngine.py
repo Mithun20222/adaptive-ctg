@@ -28,26 +28,30 @@ class BoltEngine:
         stack = lambda xs: torch.stack(xs, dim=1)                # (B, steps, ...)
         return torch.stack(ids, dim=1), stack(Ys), stack(Ss), stack(LMs), cache, cur
 
-    def generate(self, past, last_logits, kw_ids, L, t0=0, steps=None):
+    def tune(self, past, last_logits, kw_ids, L, t0=0, steps=None):
+        """Runs the outer tuning loop only. Returns the tuned bias (B, L, V) and history."""
         steps = steps or (L - t0)
-        last_logits = last_logits.detach()                       # prefix is a constant
+        last_logits = last_logits.detach()
         B, V = last_logits.shape
-        bias = torch.zeros(B, L, V, device=last_logits.device, requires_grad=True)  # the only leaf
+        bias = torch.zeros(B, L, V, device=last_logits.device, requires_grad=True)
         history = []
-
         for it in range(self.iters):
             _, Y, S, LM, _, _ = self._rollout(past, last_logits, bias, t0, steps, L)
-            e_lm = fluency_energy(Y, LM)         # Y: STE tokens (B,steps,V); LM[s] already predicts token s
-            kws = kw_ids if isinstance(kw_ids[0], list) else [kw_ids]   # one keyword or a list
+            kws = kw_ids if isinstance(kw_ids[0], list) else [kw_ids]
+            e_lm = fluency_energy(Y, LM)
             e_kw = sum(keyword_energy(S, kw) for kw in kws)
             loss = self.lambda_lm * e_lm + self.lambda_hard * e_kw
             bias.grad = None
-            loss.backward()                      # graph freed here; only `bias` gets a gradient
+            loss.backward()
             with torch.no_grad():
-                g = bias.grad / (bias.grad.abs().max() + 1e-12)  # normalize: largest entry moves by lr
+                g = bias.grad / (bias.grad.abs().max() + 1e-12)
                 bias -= self.lr * g
             history.append((it, e_lm.item(), e_kw.item()))
+        return bias.detach(), history
 
-        with torch.no_grad():                    # final decode with the tuned bias, no graph
-            ids, _, _, _, cache, nxt = self._rollout(past, last_logits, bias, t0, steps, L)
+    def generate(self, past, last_logits, kw_ids, L, t0=0, steps=None):
+        steps = steps or (L - t0)
+        bias, history = self.tune(past, last_logits, kw_ids, L, t0, steps)
+        with torch.no_grad():
+            ids, _, _, _, cache, nxt = self._rollout(past, last_logits.detach(), bias, t0, steps, L)
         return ids, cache, nxt, history
