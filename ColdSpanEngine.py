@@ -56,9 +56,10 @@ class ColdSpanEngine:
             logits, _ = self.lm.soft_forward(embeds, past_key_values=cache)   # (B, k, V)
             # shift by one: span token 0 is predicted by the prefix's last logits
             pred = torch.cat([last_logits.unsqueeze(1), logits[:, :-1]], dim=1)  # (B, k, V)
-
+            
             e_lm = fluency_energy(probs, pred)
-            e_kw = keyword_energy(probs, kw_ids)
+            kws = kw_ids if isinstance(kw_ids[0], list) else [kw_ids]   # one keyword or a list
+            e_kw = sum(keyword_energy(probs, kw) for kw in kws)
             energy = self.lambda_lm * e_lm + self.lambda_hard * e_kw
 
             # autograd.grad (not backward): returns dE/dy only, accumulates nothing,
