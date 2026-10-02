@@ -26,7 +26,7 @@ def keyword_energy(span_probs, kw_ids, temperature=1.0, eps=1e-10):
         [-sum(logp[:, s + j, j] for j in range(m)) for s in range(k - m + 1)],
         dim=1,
     )                                                # (B, k-m+1)
-    return (-temperature * torch.logsumexp(-costs / temperature, dim=1)).mean()
+    return (-temperature * torch.logsumexp(-costs / temperature, dim=1)).clamp(min=0).mean()
 
 
 def attribute_energy(class_logits, target_class):
