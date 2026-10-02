@@ -38,7 +38,8 @@ class BoltEngine:
         for it in range(self.iters):
             _, Y, S, LM, _, _ = self._rollout(past, last_logits, bias, t0, steps, L)
             e_lm = fluency_energy(Y, LM)         # Y: STE tokens (B,steps,V); LM[s] already predicts token s
-            e_kw = keyword_energy(S, kw_ids)     # on SOFT probs: one-hot would give log(0) and blow up
+            kws = kw_ids if isinstance(kw_ids[0], list) else [kw_ids]   # one keyword or a list
+            e_kw = sum(keyword_energy(S, kw) for kw in kws)
             loss = self.lambda_lm * e_lm + self.lambda_hard * e_kw
             bias.grad = None
             loss.backward()                      # graph freed here; only `bias` gets a gradient
