@@ -3,6 +3,8 @@ import torch.nn.functional as F
 from transformers import GPT2TokenizerFast
 from DualPathLM import DualPathLM
 
+torch.manual_seed(0)
+
 tok = GPT2TokenizerFast.from_pretrained("gpt2")
 lm = DualPathLM()
 ids = tok("In the deep dark ocean, a submarine", return_tensors="pt").input_ids.to(lm.device)
@@ -28,4 +30,7 @@ logits, _ = lm.soft_forward(lm.probs_to_embeds(probs), past_key_values=past)
 logits.sum().backward()
 assert probs.grad is not None
 assert all(p.grad is None for p in lm.model.parameters())
+with torch.no_grad():
+    y = engine._init_logits(past, logits[:, -1], k)   # just to inspect; replace with the optimized y if you return it
+
 print("all tests passed")

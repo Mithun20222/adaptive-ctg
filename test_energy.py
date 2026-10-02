@@ -4,6 +4,8 @@ from transformers import GPT2TokenizerFast
 from DualPathLM import DualPathLM
 from EnergyFunctions import fluency_energy, keyword_energy
 
+torch.manual_seed(0)
+
 tok = GPT2TokenizerFast.from_pretrained("gpt2")
 lm = DualPathLM()
 V = lm.embed_matrix.shape[0]
