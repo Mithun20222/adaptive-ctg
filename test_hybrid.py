@@ -1,6 +1,6 @@
 import time, torch
 from transformers import GPT2TokenizerFast
-from dual_path_lm import DualPathLM
+from DualPathLM import DualPathLM
 from BoltEngine import BoltEngine
 from ColdSpanEngine import ColdSpanEngine
 from AdaptiveRouter import AdaptiveRouter
