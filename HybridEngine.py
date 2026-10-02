@@ -1,5 +1,6 @@
 import copy
 import torch
+from metrics import contains
 
 
 class HybridEngine:
@@ -20,9 +21,10 @@ class HybridEngine:
             if action is not None:
                 kw, k = action
                 # 2) COLD span: prefix cache is frozen inside optimize(); returns committed cache
-                span, cache, cur, _, _ = self.cold.optimize(cache, cur, [kw], k)
+                span, cache, cur, hist, _ = self.cold.optimize(cache, cur, [kw], k)
                 ids += span[0].tolist()
-                escalations.append((t, k))
+                ok = contains(span[0].tolist(), kw)                       # did the keyword land in the span?
+                escalations.append((t, k, ok, round(hist[-1][2], 3)))     # (start, span len, placed?, final E_kw)
                 t += k
             else:
                 # 3) one BOLT step with the tuned bias (no graph needed)
