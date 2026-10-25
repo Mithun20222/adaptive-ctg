@@ -4,7 +4,8 @@ from metrics import contains
 class AdaptiveRouter:
     """Decides, at step t, whether to hand a span to COLD."""
 
-    def __init__(self, keywords, L, tau_horizon=5.0, extra=3):
+    def __init__(self, keywords, L, tau_horizon=5.0, extra=3, single=False):
+        self.single = single
         self.keywords = keywords          # list of keywords, each a list of token ids
         self.L = L                        # total target length
         self.tau = tau_horizon            # max tokens per remaining keyword before escalating
@@ -26,5 +27,7 @@ class AdaptiveRouter:
         fit = [kw for kw in rem if len(kw) <= room]       # keywords that can still fit
         if not fit:
             return None
+        if self.single:
+            fit = fit[:1] 
         k = min(sum(len(kw) for kw in fit) + self.extra, room)
         return fit, k
