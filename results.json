@@ -1,0 +1,191 @@
+[
+ {
+  "prompt": "In the deep dark ocean,",
+  "set": "common",
+  "method": "BOLT",
+  "met": 4,
+  "ppl": 23.10813317098774,
+  "tps": 3.347027006874458,
+  "text": " lighthouse octopus is a submarine treasure hunter\n\nThe octopus octopus is a submarine treasure hunter.\n\nThe oct"
+ },
+ {
+  "prompt": "In the deep dark ocean,",
+  "set": "common",
+  "method": "COLD",
+  "met": 3,
+  "ppl": 76.77506532157125,
+  "tps": 0.8205279347170967,
+  "text": " the lighthouse is filled with the treasure of water that is not the octopus of ice.\" The ocean is so a \"sea"
+ },
+ {
+  "prompt": "In the deep dark ocean,",
+  "set": "common",
+  "method": "Hybrid",
+  "met": 4,
+  "ppl": 23.10813317098774,
+  "tps": 3.7658209129807183,
+  "text": " lighthouse octopus is a submarine treasure hunter\n\nThe octopus octopus is a submarine treasure hunter.\n\nThe oct"
+ },
+ {
+  "prompt": "In the deep dark ocean,",
+  "set": "rare1",
+  "method": "BOLT",
+  "met": 2,
+  "ppl": 24.20267964144734,
+  "tps": 3.325273973519355,
+  "text": " a leviathan with hydrothermal vents that is perioluminescent. The leviathan is a very large"
+ },
+ {
+  "prompt": "In the deep dark ocean,",
+  "set": "rare1",
+  "method": "COLD",
+  "met": 0,
+  "ppl": 84.0619343319789,
+  "tps": 0.6161023980216584,
+  "text": " the water is filled with a layer of water that is a hydroiolmalinescent.\" The water is called a \"sea"
+ },
+ {
+  "prompt": "In the deep dark ocean,",
+  "set": "rare1",
+  "method": "Hybrid",
+  "met": 3,
+  "ppl": 48.100780644767,
+  "tps": 1.1330021173015965,
+  "text": " a leviathan with hydrothermal vents that is perioluminescent. The leviathan periscope large"
+ },
+ {
+  "prompt": "In the deep dark ocean,",
+  "set": "rare2",
+  "method": "BOLT",
+  "met": 2,
+  "ppl": 80.40576797641272,
+  "tps": 3.1354526200915407,
+  "text": " the trench is covered with phosphorescent algae, which is a ang subfishible. The algae are able to grow in the"
+ },
+ {
+  "prompt": "In the deep dark ocean,",
+  "set": "rare2",
+  "method": "COLD",
+  "met": 1,
+  "ppl": 82.91797987190056,
+  "tps": 0.629717430025553,
+  "text": " the water is filled with the layer of water that is called phosph submers trench water.\" This ocean is called a \"sea"
+ },
+ {
+  "prompt": "In the deep dark ocean,",
+  "set": "rare2",
+  "method": "Hybrid",
+  "met": 3,
+  "ppl": 109.78155492245133,
+  "tps": 1.1622393857383246,
+  "text": " the trench is covered with phosphorescent algae, which is a ang subfishible. The algae are able to submersible"
+ },
+ {
+  "prompt": "The old castle stood on a hill,",
+  "set": "rare1",
+  "method": "BOLT",
+  "met": 4,
+  "ppl": 26.199589231376034,
+  "tps": 3.104327539334249,
+  "text": " bioluminescent, with leviathan hydrothermal vents and a large, periscope-shaped dome."
+ },
+ {
+  "prompt": "The old castle stood on a hill,",
+  "set": "rare1",
+  "method": "COLD",
+  "met": 2,
+  "ppl": 14.702476335657243,
+  "tps": 0.6066808850941916,
+  "text": " bioluminescent on a leviathan old castle stood on a hill. The old castle stood on a hill."
+ },
+ {
+  "prompt": "The old castle stood on a hill,",
+  "set": "rare1",
+  "method": "Hybrid",
+  "met": 4,
+  "ppl": 26.199589231376034,
+  "tps": 3.1518860288477217,
+  "text": " bioluminescent, with leviathan hydrothermal vents and a large, periscope-shaped dome."
+ },
+ {
+  "prompt": "The old castle stood on a hill,",
+  "set": "rare2",
+  "method": "BOLT",
+  "met": 3,
+  "ppl": 95.71788641513973,
+  "tps": 3.097874787392915,
+  "text": " and the anglerfish were sub trenchorescent. The submersible was a small boat, and the boat was a small"
+ },
+ {
+  "prompt": "The old castle stood on a hill,",
+  "set": "rare2",
+  "method": "COLD",
+  "met": 2,
+  "ppl": 16.611739020177932,
+  "tps": 0.622669671036428,
+  "text": " and the anglerfish on a phosphorescent The old castle stood on a hill. The old castle stood on a hill."
+ },
+ {
+  "prompt": "The old castle stood on a hill,",
+  "set": "rare2",
+  "method": "Hybrid",
+  "met": 3,
+  "ppl": 95.71788641513973,
+  "tps": 1.4069028613578738,
+  "text": " and the anglerfish were sub trenchorescent. The submersible was a small boat, and the boat was a small"
+ },
+ {
+  "prompt": "Last night at the market,",
+  "set": "rare1",
+  "method": "BOLT",
+  "met": 4,
+  "ppl": 39.3278131396178,
+  "tps": 3.102071554352697,
+  "text": " the company announced that it was bioluminescent leviathan hydrothermal periscope (LHPCP"
+ },
+ {
+  "prompt": "Last night at the market,",
+  "set": "rare1",
+  "method": "COLD",
+  "met": 1,
+  "ppl": 193.88409875870718,
+  "tps": 0.6212468685147061,
+  "text": " the company announced that it had biolumthermal periscope Galaxy S4, to Samsung. The company said it"
+ },
+ {
+  "prompt": "Last night at the market,",
+  "set": "rare1",
+  "method": "Hybrid",
+  "met": 4,
+  "ppl": 39.3278131396178,
+  "tps": 3.0976371217323626,
+  "text": " the company announced that it was bioluminescent leviathan hydrothermal periscope (LHPCP"
+ },
+ {
+  "prompt": "Last night at the market,",
+  "set": "rare2",
+  "method": "BOLT",
+  "met": 4,
+  "ppl": 67.82189581094573,
+  "tps": 3.1183579848653578,
+  "text": " phosphorescent anglerfish were spotted in ang submersible trenching.\n\nThe fish were in the water for about"
+ },
+ {
+  "prompt": "Last night at the market,",
+  "set": "rare2",
+  "method": "COLD",
+  "met": 1,
+  "ppl": 35.42349928522164,
+  "tps": 0.63553173170863,
+  "text": " the company announced that it had sold its phosph submersible to the Galaxy S6, to Samsung. The company said that"
+ },
+ {
+  "prompt": "Last night at the market,",
+  "set": "rare2",
+  "method": "Hybrid",
+  "met": 4,
+  "ppl": 67.82189581094573,
+  "tps": 3.16724997030824,
+  "text": " phosphorescent anglerfish were spotted in ang submersible trenching.\n\nThe fish were in the water for about"
+ }
+]
