@@ -31,3 +31,8 @@ class AdaptiveRouter:
             fit = fit[:1] 
         k = min(sum(len(kw) for kw in fit) + self.extra, room)
         return fit, k
+    
+    def check_suffix(self, t, bridge_len):
+        """Returns k (span length for COLD) once the remaining room is within the bridge."""
+        room = self.L - t
+        return room if room <= bridge_len else None

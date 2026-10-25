@@ -36,3 +36,17 @@ class HybridEngine:
                 t += 1
 
         return torch.tensor([ids], device=last_logits.device), escalations
+
+    def generate_infill(self, past, last_logits, suffix_ids, bridge_len=6, lambda_right=1.0):
+        cache, cur, ids, t = copy.deepcopy(past), last_logits.detach(), [], 0
+        while t < self.router.L:
+            k = self.router.check_suffix(t, bridge_len)
+            if k is not None:
+                span, cache, cur, hist, _ = self.cold.optimize(cache, cur, [], k, suffix_ids=suffix_ids, lambda_right=lambda_right)
+                ids += span[0].tolist()
+                return torch.tensor([ids], device=last_logits.device), hist
+            with torch.no_grad():
+                tok = cur.argmax(-1, keepdim=True)
+                out, cache = self.lm.discrete_forward(tok, past_key_values=cache)
+                cur = out[:, -1]
+            ids.append(tok.item()); t += 1
