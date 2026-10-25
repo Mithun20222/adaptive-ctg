@@ -1,0 +1,302 @@
+[
+ {
+  "prompt": "In the deep dark ocean,",
+  "set": "n6-fwd",
+  "n": 6,
+  "esc": 1,
+  "bolt_met": 1,
+  "hyb_met": 2,
+  "bolt_ppl": 37.652464807077415,
+  "hyb_ppl": 44.16993935722888
+ },
+ {
+  "prompt": "In the deep dark ocean,",
+  "set": "n6-rev",
+  "n": 6,
+  "esc": 1,
+  "bolt_met": 4,
+  "hyb_met": 4,
+  "bolt_ppl": 68.16017219022851,
+  "hyb_ppl": 101.81534597593323
+ },
+ {
+  "prompt": "In the deep dark ocean,",
+  "set": "n8",
+  "n": 8,
+  "esc": 2,
+  "bolt_met": 4,
+  "hyb_met": 4,
+  "bolt_ppl": 47.76315699332236,
+  "hyb_ppl": 57.56729859570151
+ },
+ {
+  "prompt": "The old castle stood on a hill,",
+  "set": "n6-fwd",
+  "n": 6,
+  "esc": 1,
+  "bolt_met": 4,
+  "hyb_met": 4,
+  "bolt_ppl": 23.133175972713826,
+  "hyb_ppl": 23.133175972713826
+ },
+ {
+  "prompt": "The old castle stood on a hill,",
+  "set": "n6-rev",
+  "n": 6,
+  "esc": 0,
+  "bolt_met": 5,
+  "hyb_met": 5,
+  "bolt_ppl": 83.2785211178983,
+  "hyb_ppl": 83.2785211178983
+ },
+ {
+  "prompt": "The old castle stood on a hill,",
+  "set": "n8",
+  "n": 8,
+  "esc": 2,
+  "bolt_met": 4,
+  "hyb_met": 6,
+  "bolt_ppl": 46.833035938661524,
+  "hyb_ppl": 127.14059506399553
+ },
+ {
+  "prompt": "Last night at the market,",
+  "set": "n6-fwd",
+  "n": 6,
+  "esc": 0,
+  "bolt_met": 5,
+  "hyb_met": 5,
+  "bolt_ppl": 60.02592969206468,
+  "hyb_ppl": 60.02592969206468
+ },
+ {
+  "prompt": "Last night at the market,",
+  "set": "n6-rev",
+  "n": 6,
+  "esc": 1,
+  "bolt_met": 5,
+  "hyb_met": 5,
+  "bolt_ppl": 222.5934181672202,
+  "hyb_ppl": 282.11409266331185
+ },
+ {
+  "prompt": "Last night at the market,",
+  "set": "n8",
+  "n": 8,
+  "esc": 2,
+  "bolt_met": 3,
+  "hyb_met": 4,
+  "bolt_ppl": 30.288324554653762,
+  "hyb_ppl": 106.87999644034228
+ },
+ {
+  "prompt": "The scientists gathered in the laboratory,",
+  "set": "n6-fwd",
+  "n": 6,
+  "esc": 2,
+  "bolt_met": 1,
+  "hyb_met": 1,
+  "bolt_ppl": 12.387650257781402,
+  "hyb_ppl": 30.055893573306797
+ },
+ {
+  "prompt": "The scientists gathered in the laboratory,",
+  "set": "n6-rev",
+  "n": 6,
+  "esc": 1,
+  "bolt_met": 5,
+  "hyb_met": 5,
+  "bolt_ppl": 43.349512349867254,
+  "hyb_ppl": 68.42511638933777
+ },
+ {
+  "prompt": "The scientists gathered in the laboratory,",
+  "set": "n8",
+  "n": 8,
+  "esc": 3,
+  "bolt_met": 2,
+  "hyb_met": 2,
+  "bolt_ppl": 13.241065218758452,
+  "hyb_ppl": 29.586534030069657
+ },
+ {
+  "prompt": "Early in the morning, the village",
+  "set": "n6-fwd",
+  "n": 6,
+  "esc": 1,
+  "bolt_met": 1,
+  "hyb_met": 2,
+  "bolt_ppl": 81.83874804836454,
+  "hyb_ppl": 131.09486866550566
+ },
+ {
+  "prompt": "Early in the morning, the village",
+  "set": "n6-rev",
+  "n": 6,
+  "esc": 2,
+  "bolt_met": 2,
+  "hyb_met": 2,
+  "bolt_ppl": 48.76549397649122,
+  "hyb_ppl": 48.76549397649122
+ },
+ {
+  "prompt": "Early in the morning, the village",
+  "set": "n8",
+  "n": 8,
+  "esc": 2,
+  "bolt_met": 2,
+  "hyb_met": 4,
+  "bolt_ppl": 54.36834749024584,
+  "hyb_ppl": 98.9919853541337
+ },
+ {
+  "prompt": "After years of searching, they finally",
+  "set": "n6-fwd",
+  "n": 6,
+  "esc": 2,
+  "bolt_met": 1,
+  "hyb_met": 2,
+  "bolt_ppl": 25.901968056612077,
+  "hyb_ppl": 22.379523896930397
+ },
+ {
+  "prompt": "After years of searching, they finally",
+  "set": "n6-rev",
+  "n": 6,
+  "esc": 2,
+  "bolt_met": 3,
+  "hyb_met": 3,
+  "bolt_ppl": 110.17544512720953,
+  "hyb_ppl": 110.17544512720953
+ },
+ {
+  "prompt": "After years of searching, they finally",
+  "set": "n8",
+  "n": 8,
+  "esc": 2,
+  "bolt_met": 2,
+  "hyb_met": 4,
+  "bolt_ppl": 47.51584536091807,
+  "hyb_ppl": 98.2169869855401
+ },
+ {
+  "prompt": "The storm rolled in quickly,",
+  "set": "n6-fwd",
+  "n": 6,
+  "esc": 1,
+  "bolt_met": 3,
+  "hyb_met": 4,
+  "bolt_ppl": 84.66308676297139,
+  "hyb_ppl": 76.10262424305476
+ },
+ {
+  "prompt": "The storm rolled in quickly,",
+  "set": "n6-rev",
+  "n": 6,
+  "esc": 2,
+  "bolt_met": 2,
+  "hyb_met": 3,
+  "bolt_ppl": 100.67787653312067,
+  "hyb_ppl": 198.87888058382268
+ },
+ {
+  "prompt": "The storm rolled in quickly,",
+  "set": "n8",
+  "n": 8,
+  "esc": 2,
+  "bolt_met": 4,
+  "hyb_met": 5,
+  "bolt_ppl": 107.1137703989307,
+  "hyb_ppl": 143.46186080279122
+ },
+ {
+  "prompt": "At the edge of the forest,",
+  "set": "n6-fwd",
+  "n": 6,
+  "esc": 1,
+  "bolt_met": 5,
+  "hyb_met": 5,
+  "bolt_ppl": 138.13865708388846,
+  "hyb_ppl": 165.942510654155
+ },
+ {
+  "prompt": "At the edge of the forest,",
+  "set": "n6-rev",
+  "n": 6,
+  "esc": 1,
+  "bolt_met": 4,
+  "hyb_met": 5,
+  "bolt_ppl": 78.04834285652309,
+  "hyb_ppl": 172.15242556866633
+ },
+ {
+  "prompt": "At the edge of the forest,",
+  "set": "n8",
+  "n": 8,
+  "esc": 2,
+  "bolt_met": 3,
+  "hyb_met": 5,
+  "bolt_ppl": 77.62815173176924,
+  "hyb_ppl": 134.4431782888754
+ },
+ {
+  "prompt": "The old sailor looked at the horizon,",
+  "set": "n6-fwd",
+  "n": 6,
+  "esc": 1,
+  "bolt_met": 4,
+  "hyb_met": 5,
+  "bolt_ppl": 71.57516372395975,
+  "hyb_ppl": 113.25959054777108
+ },
+ {
+  "prompt": "The old sailor looked at the horizon,",
+  "set": "n6-rev",
+  "n": 6,
+  "esc": 1,
+  "bolt_met": 3,
+  "hyb_met": 3,
+  "bolt_ppl": 87.39716098041283,
+  "hyb_ppl": 106.07136168735852
+ },
+ {
+  "prompt": "The old sailor looked at the horizon,",
+  "set": "n8",
+  "n": 8,
+  "esc": 2,
+  "bolt_met": 3,
+  "hyb_met": 5,
+  "bolt_ppl": 69.86766914218391,
+  "hyb_ppl": 230.32454156826202
+ },
+ {
+  "prompt": "During the long winter,",
+  "set": "n6-fwd",
+  "n": 6,
+  "esc": 1,
+  "bolt_met": 4,
+  "hyb_met": 5,
+  "bolt_ppl": 155.61458709326914,
+  "hyb_ppl": 218.93927804068304
+ },
+ {
+  "prompt": "During the long winter,",
+  "set": "n6-rev",
+  "n": 6,
+  "esc": 0,
+  "bolt_met": 5,
+  "hyb_met": 5,
+  "bolt_ppl": 135.35330209508706,
+  "hyb_ppl": 135.35330209508706
+ },
+ {
+  "prompt": "During the long winter,",
+  "set": "n8",
+  "n": 8,
+  "esc": 2,
+  "bolt_met": 2,
+  "hyb_met": 4,
+  "bolt_ppl": 214.9631695719655,
+  "hyb_ppl": 471.8402758215144
+ }
+]
