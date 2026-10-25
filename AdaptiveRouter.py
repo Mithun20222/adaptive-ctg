@@ -7,22 +7,24 @@ class AdaptiveRouter:
     def __init__(self, keywords, L, tau_horizon=5.0, extra=3):
         self.keywords = keywords          # list of keywords, each a list of token ids
         self.L = L                        # total target length
-        self.tau = tau_horizon            # max tokens-per-remaining-keyword before escalating
-        self.extra = extra                # span = len(keyword) + extra
+        self.tau = tau_horizon            # max tokens per remaining keyword before escalating
+        self.extra = extra                # slack tokens added to the span
 
     def remaining(self, generated):
         return [kw for kw in self.keywords if not contains(generated, kw)]
 
     def check(self, t, generated):
         """t = tokens generated so far; generated = their ids (list).
-        Returns None (stay with BOLT) or (keyword, span_length) (escalate to COLD)."""
+        Returns None (stay with BOLT) or (keywords, k): COLD span of k tokens
+        covering every remaining keyword that still fits."""
         rem = self.remaining(generated)
         if not rem:
             return None                                   # all constraints met
-        delta = (self.L - t) / len(rem)                   # horizon deficit from the spec
-        if delta > self.tau:
+        if (self.L - t) / len(rem) > self.tau:
             return None                                   # enough room per keyword
-        k = min(sum(len(kw) for kw in rem) + self.extra, self.L - t)
-        if k < min(len(kw) for kw in rem):
-            return None                                       # nothing fits anymore
-        return rem, k                                         # ALL remaining keywords, one span
+        room = self.L - t
+        fit = [kw for kw in rem if len(kw) <= room]       # keywords that can still fit
+        if not fit:
+            return None
+        k = min(sum(len(kw) for kw in fit) + self.extra, room)
+        return fit, k
