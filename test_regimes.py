@@ -36,8 +36,9 @@ def run(name, kws, L, taus):
         report(f"HYBRID tau={tau}", ids, time.time() - t0, f"| esc {esc}")
 
 
-kw_common = [tok(w).input_ids for w in common]
 kw_rare = [tok(w).input_ids for w in rare]
-run("common", kw_common, 15, [3.0, 2.0])
-run("common", kw_common, 18, [3.0, 2.0])
-run("rare", kw_rare, 25, [5.0, 3.0, 2.0])
+rare2 = [" phosphorescent", " submersible", " anglerfish", " trench"]
+kw_rare2 = [tok(w).input_ids for w in rare2]
+
+run("rare set 1", kw_rare, 25, [5.0, 3.0, 2.0])
+run("rare set 2", kw_rare2, 25, [5.0, 3.0, 2.0])
