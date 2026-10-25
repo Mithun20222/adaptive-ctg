@@ -34,3 +34,10 @@ def attribute_energy(class_logits, target_class):
     class_logits: (B, C). Plug in a sentiment classifier later (optional)."""
     target = torch.full((class_logits.shape[0],), target_class, device=class_logits.device)
     return F.cross_entropy(class_logits, target)
+
+def suffix_energy(logits_all, k, suffix_ids):
+    """NLL of the fixed suffix tokens given the soft span before them.
+    logits_all: (B, k+m, V) predictions aligned so row i predicts token i of [span; suffix]."""
+    m = len(suffix_ids)
+    tgt = torch.as_tensor(suffix_ids, device=logits_all.device).unsqueeze(0).expand(logits_all.shape[0], m)
+    return F.cross_entropy(logits_all[:, k:].reshape(-1, logits_all.shape[-1]), tgt.reshape(-1))
